@@ -8,7 +8,7 @@ Dates of last documented change in parentheses (YYYY-MM-DD).
 Detailed documentation for individual subfolders:
 
 - [00_manifest/README.md](00_manifest/README.md): Master file registry, multi-million entry gene indexes, alias databases, and feature dictionaries.
-  - [00_manifest/file_registry.csv](00_manifest/file_registry.csv): The central tracking catalog mapping legacy files (from the original Attie lab data shares) to standardized HEUREKA paths. Columns include:
+  - [00_manifest/file_registry.csv](00_manifest/file_registry.csv): **COPY** of central tracking catalog mapping legacy files (from the original Attie lab data shares) to standardized HEUREKA paths. Columns include:
     - `original_path`: Source path on lab storage.
     - `new_path`: Normalized path within the HEUREKA directory structure.
     - `original_name` / `new_name`: Canonical file names.
