@@ -8,6 +8,14 @@ Dates of last documented change in parentheses (YYYY-MM-DD).
 Detailed documentation for individual subfolders:
 
 - [00_manifest/README.md](00_manifest/README.md): Master file registry, multi-million entry gene indexes, alias databases, and feature dictionaries.
+  - [00_manifest/file_registry.csv](00_manifest/file_registry.csv): The central tracking catalog mapping legacy files (from the original Attie lab data shares) to standardized HEUREKA paths. Columns include:
+    - `original_path`: Source path on lab storage.
+    - `new_path`: Normalized path within the HEUREKA directory structure.
+    - `original_name` / `new_name`: Canonical file names.
+    - `sha256`: Cryptographic hash verifying file integrity against originals.
+    - `size`: Uncompressed byte size.
+    - `matches_rdrive_original`: Verification status against the ResearchDrive source.
+    - `parquet_path` / `parquet_status` / `parquet_sha256` / `pq_size`: Corresponding Parquet mirror tracking.
 - [01_Datasets/README.md](01_Datasets/README.md): Primary expression, clinical phenotype, and ANOVA timecourse datasets across B6xBTBR F2, DO500, DO1200, and Founder cohorts.
 - [02_Genetic_results/README.md](02_Genetic_results/README.md): Genome-wide significant QTL peaks, Bayesian causal mediation (`bmediatR`), sequence conservation, and variant impact tables.
 - [03_Reference/README.md](03_Reference/README.md): Proteomic surveys in founder strains (13 tissues, diet studies) and islet pharmacological perturbations.
@@ -50,5 +58,6 @@ Detailed documentation for individual subfolders:
 ## Data Governance & Freeze Rules
 
 To maintain integrity across multi-investigator analyses and tool suites:
+
 - **Read-Only Original Trees**: Directories `00_manifest/`, `01_Datasets/`, `02_Genetic_results/`, `03_Reference/`, and `04_External/` are frozen and read-only as of September 30, 2026.
 - **Dynamic Output Destination**: All novel outputs from discovery tools must be written exclusively to `99_derived/`.
